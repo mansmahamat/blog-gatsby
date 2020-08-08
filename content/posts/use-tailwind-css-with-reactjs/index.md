@@ -7,35 +7,35 @@ excerpt: Setup a project with Tailwind CSS with React JS.
 ---
 
 ### TAILWIND CSS ?
-Tailwind is a highly customizable CSS framework with which you can quickly create your own web pages and components. Different classes exist and we can create our own classes so as not to repeat an element that we use a lot of times.
+Tailwind is a highly customizable CSS framework with which you can quickly create your own web pages and components. Different classes exist and we can create our own classes for avoid repeating code.
 ```jsx
 <p className="text-purple-700 text-opacity-100">Hello World ...</p>
 ```
-[Un lien vers la documentation](https://tailwindcss.com/) to know more.
+[a link to Documentation](https://tailwindcss.com/) to know more.
 
 #### Create React App
-```git
+```css
 npx create-react-app demo
 cd demo
 ```
 
 #### Install Tailwind CSS
-```git
+```css
 npm install tailwindcss postcss-cli autoprefixer -D
 ```
 The command below will create a tailwind.js file with all the properties of Tailwind (color, margin ...), this file will allow us to write our Tailwind classes : 
-```git
+```css
 npx tailwind init tailwind.js --full
 ```
 
 #### Configure Post CSS
 Create a file postcss.config with this command : 
-```git
+```css
 touch postcss.config.js
 ```
 
 Inside postcss.config.js paste this line :
-```git
+```css
 const tailwindcss = require('tailwindcss');
 module.exports = {
     plugins: [
@@ -59,3 +59,145 @@ src
 │   │   styles.css
 
 ```
+
+Inside the ```tailwind.css``` paste this code :
+```css
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+```
+
+#### Configure our build
+Open ```package.json``` and paste the code below, when you run ```npm run build:css``` the base style and our custom classes from ```tailwind.css``` file will be copied to our ```styles.css```.
+```js
+"scripts": {
+    "start": "npm run watch:css && react-scripts start",
+    "build": "npm run build:css && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build:css": "postcss src/assets/tailwind.css -o src/assets/styles.css", 
+    "watch:css": "postcss src/assets/tailwind.css -o src/assets/styles.css"
+  },
+```
+
+#### Import Css in our project
+
+
+- Open ```index.js``` file and delete ```import './index.css';``` and replace this line by adding ```import './assets/styles.css';```.
+
+```index.js``` should look like this after the changes:
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './assets/styles.css';
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
+
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+- Open ```App.js``` and delete ```import logo from './logo.svg';``` and all inside the ```<div className="App">```.
+
+```App.js``` should look like this after the changes:
+```jsx
+import React from 'react';
+
+
+const App = () => {
+  return (
+      <div className="App">
+
+      </div>
+    );
+};
+
+export default App;
+
+```
+
+- Run ```npm start``` the project will start in the browser and build our css in ```styles.css```.
+<div className="Image__Small">
+  <img
+    src="./images/create.jpg"
+    title="Logo Title Text 1"
+    alt="Alt text"
+  />
+</div>
+
+## Let's create two button in our project
+#### First button
+Open ```App.js``` and paste the code below for create our first simple button with Tailwind CSS classes .
+
+```jsx
+import React from 'react';
+
+
+const App = () => {
+  return (
+      <div className="App">
+        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded">
+            Button with tailwind class
+        </button>
+      </div>
+    );
+};
+
+export default App;
+
+```
+In the browser we should see : 
+
+<div className="Image__Small">
+  <img
+    src="./images/firstbutton.png"
+    alt="Button"
+  />
+</div>
+
+#### Second button
+Open ```tailwind.css``` and create our personal utilities with the following code : 
+```css
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+// After all imports you can create our personal utilities.
+
+.personal {
+    @apply bg-orange-500 text-white font-bold py-2 px-4 rounded-full;
+}
+
+```
+
+After create our utilities we need to ```npm run build:css ``` for inject the modification inside ```styles.css```.
+
+Now for use that inside our code open ```App.js``` and paste the code below :
+```jsx
+import React from 'react';
+
+
+const App = () => {
+  return (
+      <div className="App">
+        <button class="personal">
+            Button with personal utilities
+        </button>
+      </div>
+    );
+};
+
+export default App;
+
+```
+In your browser you will see : 
+<div className="Image__Small">
+  <img
+    src="./images/secondbutton.png"
+    alt="Tailwind button"
+  />
+</div>
+
+### [Let's dive in Tailwind CSS documentation](https://tailwindcss.com/) for build cool projects 😉🎉, [here you can see a site I created with Tailwind ](http://gorhino.fitactive.site/).
