@@ -9,7 +9,7 @@ import React from 'react';
  */
 export default function Logo({ fill }) {
   return (
-    <div className="Image__Small">
+    <div className="Image__Desktop">
   <img
     src="https://i.ibb.co/yfYKYG4/Logo-Makr-1rw-Khq.png"
     height="100px"
