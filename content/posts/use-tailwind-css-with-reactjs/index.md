@@ -116,7 +116,7 @@ export default App;
 
 ```
 
-- Run ```npm start``` the project will start in the browser and build our css in ```styles.css```.
+- Run ```npm start``` in terminal, the project will start in the browser and build our css in ```styles.css```.
 <div className="Image__Small">
   <img
     src="./images/create.jpg"
@@ -172,7 +172,7 @@ Open ```tailwind.css``` and create our personal utilities with the following cod
 
 ```
 
-After create our utilities we need to ```npm run build:css ``` for inject the modification inside ```styles.css```.
+After create our utilities we need to ```npm run build:css ``` in terminal for inject the modification inside ```styles.css```.
 
 Now for use that inside our code open ```App.js``` and paste the code below :
 ```jsx
@@ -200,4 +200,4 @@ In your browser you will see :
   />
 </div>
 
-### [Let's dive in Tailwind CSS documentation](https://tailwindcss.com/) for build cool projects 😉🎉, [here you can see a site I created with Tailwind ](http://gorhino.fitactive.site/).
+>[Let's dive in Tailwind CSS documentation](https://tailwindcss.com/) for build more cool projects 😉🎉, [here you can see a site I created with Tailwind ](http://gorhino.fitactive.site/).
