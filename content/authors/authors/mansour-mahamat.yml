@@ -1,0 +1,12 @@
+name: Mansour Mahamat
+bio: 
+  I am currently in web developer school in Montpellier, I created this little blog to store my discoveries. You have  links below to see my portfolio or my GitHub.
+avatar: ./avatars/mans.jpg
+social:
+  - url: https://unsplash.com
+  - url: https://stackoverflow.com
+  - url: https://github.com
+  - url: https://github.com
+  - url: https://github.com
+featured: true
+
