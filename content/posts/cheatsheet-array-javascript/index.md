@@ -7,7 +7,7 @@ excerpt: The list of array methods I use most often in JavaScript.
 ---
 
 ### ARRAY LENGTH()
-the length () method returns the length of the array.
+The length () method returns the length of the array.
 ```javascript
 const array = ["hello", "world", "javascript", "array"];
 array.length();
@@ -30,7 +30,7 @@ The pop () method removes the last element from an array and returns that elemen
 const array = ["hello", "world", "javascript", "array"];
 array.pop();
 
-array = ["hello"," world"," javascript"," array"]
+array = ["hello"," world"," javascript"]
 ```
 
 ### ARRAY UNSHIFT()
@@ -46,7 +46,7 @@ array = ["code", "everyday", "hello"," world"," javascript"," array"]
 The shift () method removes the first element from an array and returns that element. This method changes the length of the array.
 ```javascript
 const array = ["hello", "world", "javascript", "array"];
-array.unshift()
+array.shift()
 
 array = [" world"," javascript"," array"]
 ```
@@ -56,13 +56,13 @@ The forEach () method iterates through the array elements one by one to perform 
 ```javascript
 const array = ["a", "b", "c", "d"];
 array.forEach((element, index) => {
-    console.log(`Element ${element} à l'index ${index} </br>`)  
+    console.log(`Element ${element} at index ${index} </br>`)  
 } );
 
- Element a à l'index 0
- Element b à l'index 1
- Element c à l'index 2
- Element d à l'index 2
+ Element a at index 0
+ Element b at index 1
+ Element c at index 2
+ Element d at index 2
 ```
 
 ### ARRAY  FILTER()
@@ -86,29 +86,29 @@ mapWithCondition = [2,4,6,8,10]
 ```
 
 ### ARRAY REDUCE()
-La méthode reduce() applique une fonction qui est un « accumulateur » et qui traite chaque valeur d'une liste (de la gauche vers la droite) afin de la réduire à une seule valeur.
+The reduce () method applies a function which is an "accumulator" and which processes each value in the array (from left to right) to reduce it to a single value.
 ```javascript
 const array2 = [1, 2, 3, 4, 5];
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 const arrayReduce = array2.reduce(reducer );
 const arrayReduceWithCondition = array2.reduce(reducer, 100 );
 
-marrayReduce = 15
+arrayReduce = 15
 arrayReduceWithCondition = 115
 ```
 
-### ARRAY REDUCE()
-La méthode slice() renvoie un objet tableau, contenant une copie superficielle (shallow copy) d'une portion du tableau d'origine, la portion est définie par un indice de début et un indice de fin (exclus). Le tableau original ne sera pas modifié.
+### ARRAY SLICE()
+The slice () method returns an array, containing a copy of part of the original array, the portion is defined by a start index and an end index (excluded). The original array will not be modified.
 ```javascript
 const array = ["hello", "world", "javascript", "array"];
-const slice = array.slice(3);
+const slice = array.slice(1, 3);
 
-slice = ["javascript", "array"]
+slice = ["world", "javascript"]
 
 ```
 
 ### ARRAY CONCAT()
-La méthode concat() est utilisée afin de fusionner un ou plusieurs tableaux en les concaténant. Cette méthode ne modifie pas les tableaux existants, elle renvoie un nouveau tableau qui est le résultat de l'opération.
+The concat () method is used to merge one or more arrays by concatenating them. This method does not modify existing arrays, it returns a new array which is the result of the operation.
 ```javascript
 const array2 = [1, 2, 3, 4, 5];
 const array3 = [6, 7, 8, 9, 10];
@@ -119,11 +119,21 @@ arrayConcat = [1,2,3,4,5,6,7,8,9,10]
 ```
 
 ### ARRAY JOIN()
-La méthode join() crée et renvoie une nouvelle chaîne de caractères en concaténant tous les éléments d'un tableau (ou d'un objet semblable à un tableau). La concaténation utilise la virgule ou une autre chaîne, fournie en argument, comme séparateur.
+The join () method creates and returns a new character string by concatenating all the elements of an array. The concatenation uses the comma or another string, supplied as an argument, as the separator.
 ```javascript
 const array2 = [1, 2, 3, 4, 5];
 const join = array2.join("-");
 
 arrayConcat = [1-2-3-4-5]
+
+```
+
+### ARRAY REVERSE()
+The reverse() method reverses an array. The first array element becomes the last, and the last array element becomes the first.
+```javascript
+const array2 = [1, 2, 3, 4, 5];
+const reverse = array2.reverse();
+
+reverse = [5, 4, 3, 2, 1];
 
 ```
