@@ -28,6 +28,7 @@ module.exports = {
     ],
   },
   plugins: [
+    [`gatsby-source-fontawesome`],
     {
       resolve: "@narative/gatsby-theme-novela",
       options: {
